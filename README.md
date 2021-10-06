@@ -1,0 +1,2 @@
+# scraper
+Simple bash scraper
