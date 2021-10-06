@@ -1,0 +1,16 @@
+curl 'https://weather-broker-cdn.api.bbci.co.uk/en/forecast/aggregated/2643743' \
+  -H 'authority: weather-broker-cdn.api.bbci.co.uk' \
+  -H 'pragma: no-cache' \
+  -H 'cache-control: no-cache' \
+  -H 'sec-ch-ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'accept: */*' \
+  -H 'origin: https://www.bbc.co.uk' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://www.bbc.co.uk/' \
+  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \
+  --compressed -s | grep -oP 'temperatureC":\d*' | head -n 1 | grep -oP '\d*'
